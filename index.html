@@ -515,7 +515,26 @@
               </fieldset>
             </fieldset>
           </div>
-          
+          <script>
+            const customRadio = document.querySelector(
+              "input[name=gender][value=custom]"
+            );
+
+            document.querySelectorAll("input[name=gender]").forEach((radio) => {
+              radio.addEventListener("click", () => toggleCustom(radio.value));
+            });
+
+            function toggleCustom(radioValue) {
+              const customSection = document.querySelector("#gender-custom");
+              if (radioValue == "custom") {
+                customSection.classList.remove("hidden");
+                console.log("--show custom section--");
+              } else {
+                customSection.classList.add("hidden");
+                console.log("--hide custom section--");
+              }
+            }
+          </script>
 
           <!-- gender-custom: hidden -->
           <div id="gender-custom" class="hidden">
