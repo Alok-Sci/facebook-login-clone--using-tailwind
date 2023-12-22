@@ -134,9 +134,19 @@
           <button
             type="button"
             class="bg-[#42b72a] hover:bg-[#36a420] active:[#2b9217] text-white text-[1.1rem] my-2 mx-auto py-2.5 px-3.5 rounded-[.4rem] font-bold"
+            onclick="openModal()"
           >
             Create new account
           </button>
+          <script>
+            function openModal() {
+              const modal = document.querySelector(
+                "#modal__create-new-account"
+              );
+              modal.classList.remove("hidden");
+              console.log("--modal opened--");
+            }
+          </script>
         </div>
 
         <!-- create a new account  -->
@@ -176,6 +186,7 @@
             <div
               id="close-btn__create-new-account-modal"
               class="w-6 h-6 rounded-lg relative"
+              onclick="closeModal()"
             >
               <div
                 class="rounded-sm rotate-45 w-full h-[3px] bg-gray-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -184,6 +195,15 @@
                 class="rounded-sm -rotate-45 w-full h-[3px] bg-gray-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               ></div>
             </div>
+            <script>
+              function closeModal() {
+                const modal = document.querySelector(
+                  "#modal__create-new-account"
+                );
+                modal.classList.add("hidden");
+                console.log("--modal closed--");
+              }
+            </script>
           </div>
         </header>
 
