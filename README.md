@@ -14,6 +14,8 @@ The Facebook Login Page Clone is built using HTML and styled with Tailwind CSS. 
 
 I have forked the original repository, made various tweaks to the UI design, and updated the code. Some of the key UI features that I have worked on include:
 
+### Dec 22, 2023
+
 - **Input Fields:** Changed border color on active and focus for a more polished look. 🎨
 - **Login Button:** Updated color on active for a better visual experience. 🌈
 - **Create New Account Button:** Adjusted color on hover and active states. 🆕
@@ -23,6 +25,12 @@ I have forked the original repository, made various tweaks to the UI design, and
 - **Structural Fixes:** Improved the overall structure of the code. 🏗️
 - **Additional Features:** Added links to the "Forgot Password" and "Create a Page" sections. 🔗
 
+### Dec 23, 2023
+
+- **Sign-Up Modal:** Added a sleek sign-up modal for a seamless user experience. 🌟
+- **Open/Close Functionality:** Implemented open/close functionality for the sign-up modal, providing users with control. 🔄
+- **Show/Hide "#custom-gender" Section Functionality:** Applied show/hide functionality to the #custom-gender section. Now visible on "custom" gender radio button click. 👥
+  
 ## Original Creator 👏
 ![](https://avatars.githubusercontent.com/u/115573200?v=4)
 
