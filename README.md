@@ -30,6 +30,7 @@ I have forked the original repository, made various tweaks to the UI design, and
 - **Sign-Up Modal:** Added a sleek sign-up modal for a seamless user experience. 🌟
 - **Open/Close Functionality:** Implemented open/close functionality for the sign-up modal, providing users with control. 🔄
 - **Show/Hide "#custom-gender" Section Functionality:** Applied show/hide functionality to the #custom-gender section. Now visible on "custom" gender radio button click. 👥
+- **Enhanced Radio Button Interaction:** Improved the user experience by allowing users to click anywhere on the gender section to check the radio button. Now, it's not limited to just clicking the radio button itself. 🖱️👥
   
 ## Original Creator 👏
 ![](https://avatars.githubusercontent.com/u/115573200?v=4)
