@@ -119,11 +119,14 @@
             placeholder="Password"
           />
 
+          <!-- login  -->
           <button
             class="bg-[#1877f2] active:bg-[#29487d] text-white my-4 py-[.6rem] rounded-[.4rem] font-bold text-[1.2rem]"
           >
             Log in
           </button>
+
+          <!-- forgotten password  -->
           <a
             href="https://www.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzAzMjQ0ODU5LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&ars=facebook_login"
             target="_blank"
@@ -131,6 +134,8 @@
             >Forgotten password?</a
           >
           <hr class="my-5" />
+
+          <!-- create new account  -->
           <button
             type="button"
             class="bg-[#42b72a] hover:bg-[#36a420] active:[#2b9217] text-white text-[1.1rem] my-2 mx-auto py-2.5 px-3.5 rounded-[.4rem] font-bold"
@@ -149,7 +154,7 @@
           </script>
         </div>
 
-        <!-- create a new account  -->
+        <!-- create a page link and text  -->
         <div class="w-[396px] text-center text-sm my-7">
           <a
             href="https://www.facebook.com/pages/create/?ref_type=registration_form"
@@ -519,21 +524,16 @@
               <script>
                 function selectRadio(parent){
                   console.log("--selectRadio start--");
-                  parent.querySelector('input[name=gender]').checked = true;
+                  const genderRadio = parent.querySelector('input[name=gender]');
+                  genderRadio.checked = true;
+                  toggleCustom(genderRadio.value);
+                  
                   console.log("--selectRadio end--");
                 }
               </script>
             </fieldset>
           </div>
           <script>
-            const customRadio = document.querySelector(
-              "input[name=gender][value=custom]"
-            );
-
-            document.querySelectorAll("input[name=gender]").forEach((radio) => {
-              radio.addEventListener("click", () => toggleCustom(radio.value));
-            });
-
             function toggleCustom(radioValue) {
               const customSection = document.querySelector("#gender-custom");
               if (radioValue == "custom") {
