@@ -91,6 +91,7 @@
       </div>
 
       <!-- login form starts -->
+
       <form
             class="w-[53%] h-full flex flex-col items-center self-center lg:items-start lg:justify-center lg:-mt-10 lg:ps-7">
         <!-- TODO: add form validations -->
@@ -111,12 +112,44 @@
 
           <!-- TODO: add password show and hide functionality -->
           <!-- password input  -->
-          <input
-                 class="px-4 py-3.5 mt-2.5 font-light border border-[#dddfe2] focus:border-[#1b74e4] rounded-[.4rem] focus:shadow-[0_0_0_2px_rgb(231,243,255)] focus:outline-none active:outline-none placeholder:text-slate-400 focus:placeholder:text-slate-300 caret-[#1b74e4]"
-                 type="password"
-                 name=""
-                 id=""
-                 placeholder="Password" />
+          <fieldset id="pass-input"
+                    class="grid grid-cols-[minmax(50%,100%)_auto] px-4 py-3.5 mt-2.5 font-light border border-[#dddfe2]  rounded-[.4rem] focus:outline-none active:outline-none">
+            <input
+                   class=" caret-[#1b74e4] placeholder:text-slate-400 focus:placeholder:text-slate-300"
+                   type="password"
+                   name=""
+                   placeholder="Password" />
+            <span class="w-8 h-8 flex items-center justify-center -my-1 hover:bg-slate-50 active:bg-slate-100 rounded-full " onclick="togglePass(this)">
+                    <i id="icon-pass" class="fa-solid fa-eye-slash text-slate-400"></i>
+                   </span>
+          </fieldset>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const passInput = document.querySelector('#pass-input input');
+              passInput.addEventListener('click', focusField);
+              console.log('--click event added to pass');
+              passInput.addEventListener('blur', focusField);
+              console.log('--blur event added to pass');
+            });
+
+            // Show/Hide password 
+            function togglePass(iconContainer) {
+              const passInput = document.querySelector('#pass-input input');
+              const icon = iconContainer.querySelector('#icon-pass');
+
+              if (icon.classList.contains('fa-eye-slash')) {
+                passInput.setAttribute('type', 'text');
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+                console.log("--show password--");
+              } else {
+                passInput.setAttribute('type', 'password');
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+                console.log("--hide password--");
+              }
+            }
+          </script>
 
           <!-- login  -->
           <button
@@ -175,6 +208,7 @@
             class="bg-white min-w-[300px] md:min-w-[432px] max-w-[85vw] md:max-w-[432px] rounded-lg shadow-[0px_2px_4px_0px_rgba(0,0,0,.1)] shadow-[0px_8px_16px_0px_rgba(0,0,0,.1)]">
 
         <!-- form header  -->
+
         <header class="w-full flex justify-between border-b p-4">
           <div>
             <h1 class="text-[32px]/[38px] font-bold">Sign Up</h1>
@@ -209,6 +243,7 @@
         </header>
 
         <!-- form main  -->
+
         <main class="w-full flex flex-col p-4 gap-2">
           <!-- name  -->
           <div id="name" class="grid grid-cols-2 gap-2">
@@ -644,6 +679,24 @@
     </footer>
     <!-- ---footer ends---  -->
 
+    <script>
+      // function to add focus to parent of input field
+      function focusField(event) {
+              console.log('--event: ', event);
+              const parent = event.target.parentElement;
+
+              if (event.type === 'click') {
+                console.log("--focus event triggered--")
+                parent.classList.add("border-[#1b74e4]");
+                parent.classList.add("shadow-[0_0_0_2px_rgb(231,243,255)]");
+              }
+              else if (event.type === 'blur') {
+                console.log("--blur event triggered--")
+                parent.classList.remove("border-[#1b74e4]");
+                parent.classList.remove("shadow-[0_0_0_2px_rgb(231,243,255)]");
+              }
+            }
+    </script>
   </body>
 
 </html>
