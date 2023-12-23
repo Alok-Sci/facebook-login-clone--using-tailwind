@@ -497,22 +497,32 @@
             <fieldset class="grid grid-cols-3 gap-2">
               <fieldset
                 class="flex justify-between border border-[var(--bd-normal)] rounded-lg p-2"
+                onclick="selectRadio(this)"
               >
                 <label> Female </label>
                 <input type="radio" name="gender" value="female" />
               </fieldset>
               <fieldset
-                class="flex justify-between border border-[var(--bd-normal)] rounded-lg p-2"
+              class="flex justify-between border border-[var(--bd-normal)] rounded-lg p-2"
+              onclick="selectRadio(this)"
               >
                 <label> Male </label>
                 <input type="radio" name="gender" value="male" />
               </fieldset>
               <fieldset
                 class="flex justify-between border border-[var(--bd-normal)] rounded-lg p-2"
+                onclick="selectRadio(this)"
               >
                 <label> Custom </label>
                 <input type="radio" name="gender" value="custom" />
               </fieldset>
+              <script>
+                function selectRadio(parent){
+                  console.log("--selectRadio start--");
+                  parent.querySelector('input[name=gender]').checked = true;
+                  console.log("--selectRadio end--");
+                }
+              </script>
             </fieldset>
           </div>
           <script>
