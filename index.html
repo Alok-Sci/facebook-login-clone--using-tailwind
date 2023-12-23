@@ -104,10 +104,16 @@
         >
           <!-- email or mobile input  -->
           <input
+            id="email"
             class="px-4 py-3.5 font-light border border-[#dddfe2] rounded-[.4rem] focus:border-[#1b74e4] focus:shadow-[0_0_0_2px_rgb(231,243,255)] focus:outline-none active:outline-none placeholder:text-slate-400 focus:placeholder:text-slate-300 caret-[#1b74e4] text-ellipsis"
             type="text"
             placeholder="Email adderss and phone number"
           />
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              document.querySelector('#email').focus();
+            });
+          </script>
 
           <!-- TODO: add password show and hide functionality -->
           <!-- password input  -->
