@@ -99,14 +99,21 @@
         <div
              class="w-[90vw] sm:w-[400px] lg:w-[396px] flex flex-col bg-white rounded-[.5rem] p-4 shadow-[0px_2px_4px_0px_rgba(0,0,0,.1)] shadow-[0px_8px_16px_0px_rgba(0,0,0,.1)]">
           <!-- email or mobile input  -->
-          <input
-                 id="email"
-                 class="px-4 py-3.5 font-light border border-[#dddfe2] rounded-[.4rem] focus:border-[#1b74e4] focus:shadow-[0_0_0_2px_rgb(231,243,255)] focus:outline-none active:outline-none placeholder:text-slate-400 focus:placeholder:text-slate-300 caret-[#1b74e4] text-ellipsis"
-                 type="text"
-                 placeholder="Email adderss and phone number" />
+          <fieldset id="email-input"
+                    class="grid grid-cols-[minmax(50%,100%)_auto] px-4 py-3.5 mt-2.5 font-light border border-[#dddfe2]  rounded-[.4rem] focus:outline-none active:outline-none">
+            <input
+                   class="font-light focus:outline-none active:outline-none placeholder:text-slate-400 focus:placeholder:text-slate-300 caret-[#1b74e4] text-ellipsis"
+                   type="text"
+                   placeholder="Email adderss and phone number" />
+                   
+          </fieldset>
           <script>
             document.addEventListener('DOMContentLoaded', () => {
-              document.querySelector('#email').focus();
+              const emailInput = document.querySelector('#email-input input');
+              emailInput.addEventListener('click', focusField);
+              console.log('--click event added to pass');
+              emailInput.addEventListener('blur', focusField);
+              console.log('--blur event added to pass');
             });
           </script>
 
@@ -682,21 +689,22 @@
     <script>
       // function to add focus to parent of input field
       function focusField(event) {
-              console.log('--event: ', event);
-              const parent = event.target.parentElement;
+        console.log('--event: ', event);
+        const parent = event.target.parentElement;
 
-              if (event.type === 'click') {
-                console.log("--focus event triggered--")
-                parent.classList.add("border-[#1b74e4]");
-                parent.classList.add("shadow-[0_0_0_2px_rgb(231,243,255)]");
-              }
-              else if (event.type === 'blur') {
-                console.log("--blur event triggered--")
-                parent.classList.remove("border-[#1b74e4]");
-                parent.classList.remove("shadow-[0_0_0_2px_rgb(231,243,255)]");
-              }
-            }
+        if (event.type === 'click') {
+          console.log("--focus event triggered--")
+          parent.classList.add("border-[#1b74e4]");
+          parent.classList.add("shadow-[0_0_0_2px_rgb(231,243,255)]");
+        }
+        else if (event.type === 'blur') {
+          console.log("--blur event triggered--")
+          parent.classList.remove("border-[#1b74e4]");
+          parent.classList.remove("shadow-[0_0_0_2px_rgb(231,243,255)]");
+        }
+      }
     </script>
+
   </body>
 
 </html>
