@@ -102,11 +102,18 @@
           <fieldset id="email-input"
                     class="grid grid-cols-[minmax(50%,100%)_auto] px-4 py-3.5 mt-2.5 font-light border border-[#dddfe2]  rounded-[.4rem] focus:outline-none active:outline-none">
             <input
+                   id="email"
                    class="font-light focus:outline-none active:outline-none placeholder:text-slate-400 focus:placeholder:text-slate-300 caret-[#1b74e4] text-ellipsis"
                    type="text"
                    placeholder="Email adderss and phone number" />
-                   
+            <span id="email-alert-icon" class="hidden w-8 h-8 flex justify-center items-center -my-1 text-lg">
+                    <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                   </span>
           </fieldset>
+          <p id="email-alert-text" class="hidden mt-2 text-red-500 text-[12px]">The email address or mobile number you
+            entered isn't connected to an account. <a href="https://facebook.com/login/identify/"
+               class="text-[12px] font-semibold hover:underline">Find your account and log in.</a></p>
+
           <script>
             document.addEventListener('DOMContentLoaded', () => {
               const emailInput = document.querySelector('#email-input input');
@@ -122,6 +129,7 @@
           <fieldset id="pass-input"
                     class="grid grid-cols-[minmax(50%,100%)_auto] px-4 py-3.5 mt-2.5 font-light border border-[#dddfe2]  rounded-[.4rem] focus:outline-none active:outline-none">
             <input
+                   id="pass"
                    class=" caret-[#1b74e4] placeholder:text-slate-400 focus:placeholder:text-slate-300"
                    type="password"
                    name=""
@@ -129,7 +137,15 @@
             <span class="w-8 h-8 flex items-center justify-center -my-1 hover:bg-slate-50 active:bg-slate-100 rounded-full " onclick="togglePass(this)">
                     <i id="icon-pass" class="fa-solid fa-eye-slash text-slate-400"></i>
                    </span>
+            <span id="pass-alert-icon" class="hidden w-8 h-8 flex justify-center items-center -my-1 text-lg">
+                    <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                   </span>
           </fieldset>
+          <p id="pass-alert-text" class="hidden mt-2 text-red-500 text-[12px]">The password that you've entered is
+            incorrect. <a
+               href="https://www.facebook.com/recover/initiate?lwv=120&lwc=1348092&ars=facebook_login_pw_error"
+               class="text-[12px] font-semibold hover:underline">Forgotten password?</a></p>
+
           <script>
             document.addEventListener('DOMContentLoaded', () => {
               const passInput = document.querySelector('#pass-input input');
@@ -160,9 +176,59 @@
 
           <!-- login  -->
           <button
+                  id="login-button"
+                  type="button"
                   class="bg-[#1877f2] active:bg-[#29487d] text-white my-4 py-[.6rem] rounded-[.4rem] font-bold text-[1.2rem]">
             Log in
           </button>
+          <script>
+            const loginBtn = document.querySelector('#login-button');
+            loginBtn.addEventListener('click', validateForm);
+            function validateForm() {
+              console.log('--validateForm start--');
+              const email = document.querySelector('#email');
+              const password = document.querySelector('#pass');
+
+              if (email.value === '') {
+                displayAlert(email);
+              } else if (password.value === '') {
+                displayAlert(password);
+              }
+
+              function displayAlert(element) {
+                const alertIcon = document.querySelector(`#${element.id}-alert-icon`);
+                const alertText = document.querySelector(`#${element.id}-alert-text`);
+                console.log(alertIcon, alertText);
+
+                if (alertIcon.classList.contains('hidden') && alertText.classList.contains('hidden')) {
+                  const passIcon = document.querySelector('#icon-pass')
+                  if (element.id == 'pass' && passIcon ) {
+                    passIcon.parentElement.classList.add('hidden');
+                    setTimeout(() => {
+                      passIcon.parentElement.classList.remove('hidden');
+                      alertIcon.classList.add('hidden');
+                      passIcon.classList.remove('text-slate-400');
+                      passIcon.classList.add('text-red-500');
+                    }, 2000);
+                  }
+                  alertIcon.parentElement.classList.add('border-red-500');
+                  alertIcon.classList.remove('hidden');
+                  alertText.classList.remove('hidden');
+                  setTimeout(() => {
+                    alertIcon.parentElement.classList.remove('border-red-500');
+                    element.id == 'email' ? alertIcon.classList.add('hidden') : '';
+                    alertText.classList.add('hidden');
+                    
+                    if(element.id == 'pass'){
+                      console.log("passicon: ", passIcon);
+                      passIcon.classList.remove('text-red-500');
+                      passIcon.classList.add('text-slate-400');
+                    }
+                  }, 5000);
+                }
+              }
+            }
+          </script>
 
           <!-- forgotten password  -->
           <a
