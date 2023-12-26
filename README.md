@@ -32,6 +32,20 @@ I have forked the original repository, made various tweaks to the UI design, and
 - **Show/Hide "#custom-gender" Section Functionality:** Applied show/hide functionality to the #custom-gender section. Now visible on "custom" gender radio button click. 👥
 - **Enhanced Radio Button Interaction:** Improved the user experience by allowing users to click anywhere on the gender section to check the radio button. Now, it's not limited to just clicking the radio button itself. 🖱️👥
   
+### Dec 24, 2023
+
+- **Responsive Sign-Up Modal:** Improved responsiveness for mobile devices, ensuring a seamless experience across different screen sizes. 📱
+- **Enhanced User Interaction:** Set focus on the email field when the page loads, providing a smoother user experience. 📧👀
+- **Automatic Date Detection:** Implemented a feature to automatically detect the current date and set it as the default value in the date of birth (DOB) dropdowns. 📅
+- **Password Visibility Toggle:** Added functionality to show/hide the password by tapping on the eye icon inside the password field, giving users control over password visibility. 👁️🔐
+
+### Dec 26, 2023
+
+- **Form Validation on Login:** Implemented form validation on the login form for a more user-friendly experience.
+  - **Email Field Empty:** Displayed an error message and turned the email field border red when left empty. 🚫📧🔴
+  - **Password Field Empty:** Displayed an error message and turned the password field border red when left empty. 🚫🔐🔴
+
+
 ## Original Creator 👏
 ![](https://avatars.githubusercontent.com/u/115573200?v=4)
 
