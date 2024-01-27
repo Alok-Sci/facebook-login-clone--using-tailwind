@@ -8,7 +8,7 @@ The Facebook Login Page Clone is built using HTML and styled with Tailwind CSS. 
 
 ## Live Preview 🌐
 
-> Explore the [Facebook Login Page Clone](https://alok-sci.github.io/facebook-login-clone--using-tailwind/) live preview. 🚀
+> Explore the [Facebook Login Page Clone](https://main-form-validation--alok-sci-fb-clone.netlify.app/) live preview. 🚀
 
 ## My Contributions 🛠️
 
