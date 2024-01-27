@@ -7,8 +7,9 @@ This project is a clone of the [Facebook login page: Desktop Version](https://ww
 The Facebook Login Page Clone is built using HTML and styled with Tailwind CSS. The project aims to replicate the appearance and functionality of the Facebook login page.
 
 ## Live Preview 🌐
+[![Netlify Status](https://api.netlify.com/api/v1/badges/119ff49d-053e-4c53-871f-56feb39d6e75/deploy-status)](https://app.netlify.com/sites/alok-sci-fb-clone/deploys)
 
-> Explore the [Facebook Login Page Clone](https://alok-sci.github.io/facebook-login-clone--using-tailwind/) live preview. 🚀
+> Explore the [Facebook Login Page Clone](https://alok-sci-fb-clone.netlify.app/) live preview. 🚀
 
 ## My Contributions 🛠️
 
